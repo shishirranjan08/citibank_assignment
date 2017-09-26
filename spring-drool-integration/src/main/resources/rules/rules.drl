@@ -1,0 +1,16 @@
+package rules
+ 
+import com.citibank.model.Account
+
+rule "Offer for Saving account"
+	when 
+		accountObject: Account(type=="saving")
+	then
+		accountObject.setDiscount(15);
+	end
+rule "Offer for Current Account"
+	when 
+		accountObject: Account(type=="current")
+	then
+		accountObject.setDiscount(25);
+	end
